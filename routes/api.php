@@ -30,9 +30,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/warehouse', [ProductController::class,'createWarehouse']);
     Route::post('/store', [ProductController::class,'createStore']);
 
-    Route::post('/warehouse/add-stock', [ProductController::class,'addProductsToWarehouse']);
+    Route::post('/warehouse/stock', [ProductController::class,'addProductsToWarehouse']);
 
-    Route::post('/transfer', [ProductController::class,'addProductsToStore']);
+    Route::post('/store/stock', [ProductController::class,'addProductsToStore']);
 
 
     Route::get('/products/{id}', [ProductController::class, 'show']);

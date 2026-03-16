@@ -27,6 +27,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Product Management
     Route::post('/products', [ProductController::class, 'create']);
+    Route::post('/warehouse', [ProductController::class,'createWarehouse']);
+    Route::post('/store', [ProductController::class,'createStore']);
+
+    Route::post('/warehouse/add-stock', [ProductController::class,'addProductsToWarehouse']);
+
+    Route::post('/transfer', [ProductController::class,'addProductsToStore']);
+
+
     Route::get('/products/{id}', [ProductController::class, 'show']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);

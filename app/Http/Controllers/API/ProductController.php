@@ -40,7 +40,8 @@ class ProductController extends Controller
         ]);
 
         $warehouse = Warehouse::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'location' => $request->location
         ]);
 
         return response()->json([
@@ -53,7 +54,8 @@ class ProductController extends Controller
     public function createStore(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'location' => $request->location
         ]);
 
         $store = Store::create([

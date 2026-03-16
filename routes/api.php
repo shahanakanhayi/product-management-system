@@ -26,7 +26,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
 
     // Product Management
-    Route::post('/products', [ProductController::class, 'create']);
+    Route::post('/products', [ProductController::class, 'createProduct']);
     Route::post('/warehouse', [ProductController::class,'createWarehouse']);
     Route::post('/store', [ProductController::class,'createStore']);
 
